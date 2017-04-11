@@ -1,0 +1,12 @@
+.center {
+    margin: auto;
+    margin-top: 5%;
+    width: 60%;
+    border:1px solid #006669;
+    padding: 10px;
+    }
+.container{
+    text-align:center;
+    
+    border:1px solid #666;
+}

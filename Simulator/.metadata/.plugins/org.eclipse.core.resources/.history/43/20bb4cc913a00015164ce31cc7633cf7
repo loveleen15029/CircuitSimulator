@@ -1,0 +1,45 @@
+package com.winter.project;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import com.winter.project.java.*;
+
+@WebServlet(description = "File Uploading Handler", urlPatterns = { "/Uploader" })
+public class FileUploaderHandler extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	XMLParser parse;
+	private final String Directory_Path = "/home/girdhar/JAVA/WinterProject/Upload_Directory";	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name=null;
+		if(ServletFileUpload.isMultipartContent(request)){
+            try {
+                List<FileItem> fileNames = new ServletFileUpload(
+                                         new DiskFileItemFactory()).parseRequest(request);
+              
+                for(FileItem item : fileNames){
+                    if(!item.isFormField()){
+                        name = new File(item.getName()).getName();
+                        item.write(new File(Directory_Path + File.separator + name));
+                    }
+                } 
+                String fileName= Directory_Path+File.separator+name;
+                parse.domParser(fileName);
+                request.setAttribute("message", fileName);
+               
+            } catch (Exception ex) {
+               request.setAttribute("message", "File Upload Failed due to Because you have not selected a file ");
+            }         
+        }  
+        request.getRequestDispatcher("/inputparse.jsp").forward(request, response);    
+    }		
+	}
+
+

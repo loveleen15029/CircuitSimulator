@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<<<<<<< 559971ca710a192b77b0bec48c4702904033a7c2
+<refactoring comment="Rename type &apos;com.winter.project.java.Gates&apos; to &apos;LogicGates&apos;&#x0A;- Original project: &apos;Oopd&apos;&#x0A;- Original element: &apos;com.winter.project.java.Gates&apos;&#x0A;- Renamed element: &apos;com.winter.project.java.LogicGates&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Gates&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.winter.project.java{Gates.java[Gates" matchStrategy="1" name="LogicGates" qualified="false" references="true" similarDeclarations="false" stamp="1450110728732" textual="false" version="1.0"/>
+=======
+<refactoring comment="Rename local variable &apos;userhandler&apos; in &apos;com.winter.project.java.XMLParser.saxParser(...)&apos; to &apos;userHandler&apos;&#x0A;- Original project: &apos;Oopd&apos;&#x0A;- Original element: &apos;com.winter.project.java.XMLParser.saxParser(String).userhandler&apos;&#x0A;- Renamed element: &apos;userhandler&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;userhandler&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;com.winter.project.java{XMLParser.java[XMLParser~saxParser~QString;@userhandler!395!442!409!419!QParserHandler;!0!false" name="userHandler" references="true" stamp="1450103673031" version="1.0"/>
+>>>>>>> 4fab082cf94487843aed4168f0375fc9977c59b6
+</session>

@@ -1,0 +1,104 @@
+package com.winter.project.java;
+import java.io.File;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+
+public class XMLParser {
+	public void domParser(String fileName){
+      try {	
+         File inputFile = new File(fileName);
+         DocumentBuilderFactory dbFactory 
+            = DocumentBuilderFactory.newInstance();
+         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+         Document doc = dBuilder.parse(inputFile);
+         doc.getDocumentElement().normalize();
+         System.out.println("Root element :" 
+            + doc.getDocumentElement().getNodeName());
+         NodeList input = doc.getElementsByTagName("input");
+         NodeList gate = doc.getElementsByTagName("input");
+         NodeList output = doc.getElementsByTagName("input");
+         System.out.println("----------------------------");
+         for (int temp = 0; temp < input.getLength(); temp++) {
+            Node nNode = input.item(temp);
+            System.out.println("\nCurrent Element :" 
+               + nNode.getNodeName());
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+               Element eElement = (Element) nNode;
+               System.out.println("name of the input : " 
+                  + eElement.getAttribute("name"));
+               System.out.println("name of the input : " 
+                       + eElement.getAttribute("id"));
+            }
+         }
+         for (int temp = 0; temp < gate.getLength(); temp++) {
+             Node nNode = gate.item(temp);
+             System.out.println("\nCurrent Element :" 
+                + nNode.getNodeName());
+             if(nNode.getNodeName().equalsIgnoreCase("gate"))
+             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) nNode;
+                System.out.println("name : " 
+                   + eElement.getAttribute("name"));
+                System.out.println("id : " 
+                        + eElement.getAttribute("id"));
+                if( eElement.getElementsByTagName("input").item(0).getTextContent().equalsIgnoreCase("input"))
+                {
+                	NodeList input1 = doc.getElementsByTagName("input");
+                	for (int temp1 = 0; temp1 < input.getLength(); temp1++) {
+                        Node nNode1 = input.item(temp1);
+                        System.out.println("\nCurrent Element :" 
+                           + nNode1.getNodeName());
+                        if (nNode1.getNodeType() == Node.ELEMENT_NODE) {
+                           Element eElement1 = (Element) nNode1;
+                           if(eElement1.getAttribute("type").equalsIgnoreCase("gate"))
+                        	   System.out.println("name of the input : "+ eElement1.getAttribute("type"));
+                           System.out.println("name of the input : " 
+                              + eElement1.getAttribute("name"));
+                           System.out.println("name of the input : " 
+                                   + eElement1.getAttribute("id"));
+                        }
+                     }
+                }
+             }
+          }
+         for (int temp = 0; temp < input.getLength(); temp++) {
+             Node nNode = input.item(temp);
+             System.out.println("\nCurrent Element :" 
+                + nNode.getNodeName());
+             if(nNode.getNodeName().equalsIgnoreCase("output"))
+             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element eElement = (Element) nNode;
+                System.out.println("name : " 
+                   + eElement.getAttribute("name"));
+                System.out.println("id : " 
+                        + eElement.getAttribute("id"));
+                if( eElement.getElementsByTagName("input").item(0).getTextContent().equalsIgnoreCase("input"))
+                {
+                	NodeList input1 = doc.getElementsByTagName("input");
+                	for (int temp1 = 0; temp1 < input.getLength(); temp1++) {
+                        Node nNode1 = input.item(temp1);
+                        System.out.println("\nCurrent Element :" 
+                           + nNode1.getNodeName());
+                        if (nNode1.getNodeType() == Node.ELEMENT_NODE) {
+                           Element eElement1 = (Element) nNode1;
+                           if(eElement1.getAttribute("type").equalsIgnoreCase("gate"))
+                        	   System.out.println("name of the input : "+ eElement1.getAttribute("type"));
+                           System.out.println("name of the input : " 
+                              + eElement1.getAttribute("name"));
+                           System.out.println("name of the input : " 
+                                   + eElement1.getAttribute("id"));
+                        
+             }
+          }
+      }
+             }
+         }
+      }catch (Exception e) {
+         e.printStackTrace();
+      }
+   }
+}

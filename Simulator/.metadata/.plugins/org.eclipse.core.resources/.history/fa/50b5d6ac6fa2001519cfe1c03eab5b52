@@ -1,0 +1,28 @@
+package com.winter.project.java;
+import java.io.File;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+
+public class XMLParser {
+	public void saxParser(String fileName){
+
+		try {	
+	         File inputFile = new File("input.txt");
+	         SAXParserFactory factory = SAXParserFactory.newInstance();
+	         SAXParser saxParser = factory.newSAXParser();
+	         UserHandler userhandler = new UserHandler();
+	         saxParser.parse(inputFile, userhandler);     
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+}
+}

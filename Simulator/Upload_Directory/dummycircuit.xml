@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<circuit>
+   <gate type="Not" name="C" level="2">
+        <input name="A" level="1"> </input>
+   </gate>
+   <gate type="And" name="D" level="2">
+        <input name="A" level="1"> </input>
+        <input name="B" level="1"> </input>
+   </gate>
+   <gate type="Or" name="E" level="2">
+        <input type="gate" name="C" level="2"> </input>
+        <input name="B" level="1"> </input>
+   </gate>
+   <gate type="Not" name="F" level="3">
+        <input type="gate" name="E" level="2"> </input>
+   </gate>
+   <output name="G" level="4">
+       <input type="gate" name="C" level="2"> </input>
+   </output> 
+   <output name="H" level="4">
+       <input type="gate" name="D" level="2"> </input>
+   </output>
+   <output name="I" level="4">
+       <input type="gate" name="F" level="3"> </input>
+   </output>
+</circuit>

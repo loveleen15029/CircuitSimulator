@@ -1,0 +1,15 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/formcenter.css">  
+         
+</head>
+<body>
+<div class="Simple">
+            <h3> Choose File to Upload</h3>
+            <form action="/FileUploaderHandler" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="submit" value="upload" />
+            </form>          
+        </div>
+</body>
+</html>

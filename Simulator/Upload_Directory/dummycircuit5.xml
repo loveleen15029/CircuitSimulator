@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<circuit>
+   <gate type="nand" name="D" level="2">
+        <input name="A" level="1"> </input>
+        <input name="B" level="1"> </input>
+   </gate>
+   <output name="E" level="3">
+       <input type="gate" name="D" level="3"> </input>
+   </output>
+   <output name="F" level="3">
+       <input name="C" level="1"></input>
+   </output>
+</circuit>

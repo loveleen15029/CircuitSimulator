@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<circuit>
+   <gate type="Or" name="C" level="2">
+        <input name="A" level="1"> </input>
+        <input name="B" level="1"> </input>
+   </gate>
+   <output name="D" level="3">
+       <input type="gate" name="C" level="3"> </input>
+   </output>
+</circuit>
